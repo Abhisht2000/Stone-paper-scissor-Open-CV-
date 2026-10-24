@@ -146,6 +146,24 @@ Open Palm	Paper
 
 
 
+## Deploy with Streamlit Community Cloud
+
+The Streamlit version uses the visitor's browser camera. The original `main.py` remains the desktop OpenCV version.
+
+1. Push this project to a GitHub repository.
+2. Go to [share.streamlit.io](https://share.streamlit.io/) and sign in with GitHub.
+3. Create an app from the repository, select `streamlit_app.py` as the main file, and choose Python 3.11 under Advanced settings.
+4. Open the HTTPS app URL and allow camera access when prompted.
+
+The deployment dependencies are listed in `requirements.txt`. Webcam access requires HTTPS and permission from the user. If video does not connect on a restrictive network, configure a TURN server and add its credentials to the `rtc_configuration` in `streamlit_app.py`.
+
+To run the web app locally:
+
+```bash
+python -m pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
 🚀 Future Improvements
 
 Two-player mode
